@@ -10,8 +10,8 @@ const isActive = href === Astro.url.pathname.replace(/\/$/, '');
 </a>
 <style>
 	a {
-		display: inline-block;
 		text-decoration: none;
+		@apply text-lg flex gap-x-4 place-items-center font-medium;
 	}
 	a.active {
 		font-weight: bolder;
