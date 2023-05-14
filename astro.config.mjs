@@ -4,13 +4,12 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from '@astrojs/vercel/edge';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-blog-roan-ten.vercel.app/',
+  site:"https://astro-blog-pearl.vercel.app/",
   integrations: [mdx(), sitemap(), tailwind(), vue()],
   tailwindConfig: "./tailwindConfig.js",
-  output: "server",
-  adapter: vercel()
+  output: 'server',
+  adapter: vercel(),
 });

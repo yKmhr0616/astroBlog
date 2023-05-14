@@ -1,20 +1,14 @@
 ---
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
 
-const { href, class: className, ...props } = Astro.props;
-const isActive = href === Astro.url.pathname.replace(/\/$/, '');
+const { href, class: className, ...props } = Astro.props
 ---
 
-<a href={href} class:list={[className, { active: isActive }]} {...props}>
-	<slot />
+<a
+  href={href}
+  class="flex gap-x-4 items-center no-underline transition-opacity duration-300 hover:opacity-80"
+  class:list={[className]}
+  {...props}
+>
+  <slot />
 </a>
-<style>
-	a {
-		text-decoration: none;
-		@apply text-lg flex gap-x-4 place-items-center font-medium;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
-</style>

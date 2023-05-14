@@ -1,64 +1,40 @@
-# Astro Starter Kit: Blog
+# Astro
 
-```
-npm init astro -- --template blog
-```
+This directory is a brief example of an [Astro](https://astro.build/) site that can be deployed to Vercel with zero configuration. This demo showcases:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
+- `/` - A static page (pre-rendered)
+- `/ssr` - A page that uses server-side rendering (through Vercel Edge Functions)
+- `/ssr-with-swr-caching` - Similar to the previous page, but also caches the response on the Vercel Edge Network using `cache-control` headers
+- `/edge.json` - An Astro API Endpoint that returns JSON data using Vercel Edge Functions
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Learn more about [Astro on Vercel](https://vercel.com/docs/frameworks/astro).
 
+## Deploy Your Own
 
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
+Deploy your own Astro project with Vercel.
 
-Features:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/astro&template=astro)
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+_Live Example: https://astro-template.vercel.app_
 
-## 🚀 Project Structure
+## Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Astro looks for `.astro`, `.md`, or `.js` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-```
-├── public/
-├── src/
-│   ├── components/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `pnpm install`          | Installs dependencies                              |
+| `pnpm run dev`          | Starts local dev server at `localhost:3000`        |
+| `pnpm run build`        | Build your production site to `./dist/`            |
+| `pnpm run preview`      | Preview your build locally, before deploying       |
+| `pnpm run start`       | Starts a production dev server at  `localhost:3000`     |
+| `pnpm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `pnpm run astro --help` | Get help using the Astro CLI                       |

@@ -1,8 +1,13 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+export interface Props {
+  title: string
+}
+const { title } = Astro.props as Props
+
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 ---
 
 <!DOCTYPE html>
@@ -11,10 +16,47 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <slot />
-      <Footer />
-    </main>
+    <Header />
+    <slot />
+    <Footer />
   </body>
 </html>
+
+<style is:global lang="scss">
+  body {
+    @apply bg-b-bg text-base text-t leading-normal;
+  }
+
+  p,
+  span,
+  a,
+  li {
+    @apply text-md;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  h3 {
+    @apply text-h3;
+  }
+
+  h4 {
+    @apply text-h4;
+  }
+
+  h5 {
+    @apply text-h5;
+  }
+
+  h6 {
+    @apply text-h6;
+  }
+
+  
+</style>
