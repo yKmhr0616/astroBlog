@@ -7,32 +7,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<div class="l-contents --col-2">
-			<Header title={SITE_TITLE} />
-			<div class="main">
-				<main>
-					<slot />
-					<Footer />
-				</main>
-			</div>
-		</div>
-		<style lang="scss">
-			.l-contents {
-				height: 100%;
-				&.--col-2 {
-					@apply flex;
-				}
-			}
-
-			.main {
-				.--col-2 & {
-					@apply flex-grow;
-				}
-			}
-		</style>
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <slot />
+      <Footer />
+    </main>
+  </body>
 </html>
