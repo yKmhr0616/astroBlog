@@ -5,24 +5,27 @@ const b = {
 }
 
 const t = {
-	DEFAULT:"#333",
+	DEFAULT: "#333",
 }
 
 const textSize = {
-	lg:'clamp(1.25rem, calc(1.25rem + ((1vw - 0.48rem) * 0.6944)), 1.75rem)',
-	md:'clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 0.6944)), 1.5rem)',
-	sm:'clamp(0.875rem, calc(0.875rem + ((1vw - 0.48rem) * 0.5208)), 1.25rem)',
-	xs:'clamp(0.75rem, calc(0.75rem + ((1vw - 0.48rem) * 0.5208)), 1.125rem)',
-	'2xs':'clamp(0.625rem, calc(0.625rem + ((1vw - 0.48rem) * 0.5208)), 1rem)',
+	"c-lg": 'clamp(1.25rem, 1.083rem + 0.83vw, 1.75rem)',
+	"c-md": 'clamp(1rem, 0.833rem + 0.83vw, 1.5rem)',
+	"c-sm": 'clamp(0.875rem, 0.75rem + 0.63vw, 1.25rem)',
+	"c-xs": 'clamp(0.75rem, 0.625rem + 0.63vw, 1.125rem)',
+	'c-2xs': 'clamp(0.625rem, 0.5rem + 0.63vw, 1rem)',
 }
 
 const headLines = {
-	h1:'clamp(4.5rem, calc(4.5rem + ((1vw - 0.48rem) * 0.6944)), 5rem)',
-	h2:'clamp(1.5rem, calc(1.5rem + ((1vw - 0.48rem) * 0.6944)), 2rem)',
-	h3:'clamp(1.375rem, calc(1.375rem + ((1vw - 0.48rem) * 0.6944)), 1.875rem)',
-	h4:'clamp(1.25rem, calc(1.25rem + ((1vw - 0.48rem) * 0.6944)), 1.75rem)',
-	h5:'clamp(1.125rem, calc(1.125rem + ((1vw - 0.48rem) * 0.6944)), 1.625rem)',
-	h6:'clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 0.6944)), 1.5rem)',
+	h1: 'clamp(4.5rem, 4.333rem + 0.83vw, 5rem)',
+	h2: 'clamp(1.5rem, 1.333rem + 0.83vw, 2rem)',
+	h3: 'clamp(1.375rem, 1.167rem + 1.04vw, 2rem)',
+	h4: 'clamp(1.25rem, 1.083rem + 0.83vw, 1.75rem)',
+	h5: 'clamp(1.125rem, 0.958rem + 0.83vw, 1.625rem)',
+	h6: 'clamp(1rem, 0.833rem + 0.83vw, 1.5rem)',
+}
+
+const screens = {
 }
 
 /** @type {import('tailwindcss').Config} */
@@ -38,9 +41,9 @@ module.exports = {
 				b,
 				t
 			},
-			fontSize:Object.assign(textSize, headLines),
+			fontSize: Object.assign(textSize, headLines),
 			fontFamily: {
-				'noto-sans':'Noto Sans JP',
+				'noto-sans': 'Noto Sans JP',
 				'poppins': 'Poppins',
 				'roboto': 'Roboto'
 			},

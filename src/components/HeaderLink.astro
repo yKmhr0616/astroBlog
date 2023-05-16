@@ -1,12 +1,11 @@
 ---
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
-
 const { href, class: className, ...props } = Astro.props
 ---
 
 <a
   href={href}
-  class="flex gap-x-4 items-center no-underline transition-opacity duration-300 hover:opacity-80"
+  class="flex gap-x-4 justify-center items-center max-md:p-2 no-underline transition-opacity duration-300 hover:opacity-80"
   class:list={[className]}
   {...props}
 >
