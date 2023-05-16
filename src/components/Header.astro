@@ -4,14 +4,14 @@ import GoogleIcons from '@/components/common/GoogleIcons.astro'
 import { GLOBAL_NAV } from '@/config'
 ---
 
-<header class="fixed max-md:bottom-0 md:top-0 flex items-center px-4 py-5 w-full">
+<header class="fixed flex w-full items-center border-t border-gray-300 px-4 py-2.5 max-md:bottom-0 md:top-0 md:py-5">
   <nav class="flex items-center gap-x-5 max-md:flex-1 max-md:justify-evenly">
     {
       GLOBAL_NAV.map((item) => (
         <HeaderLink href={item.href}>
           <GoogleIcons class="h-6 w-6 md:hidden">
             <path stroke-linecap={item.path.linecap} stroke-linejoin={item.path.linejoin} d={item.path.d} />
-            <span class="hidden md:block text-c-sm font-medium" set:html={item.text} />
+            <span class="hidden text-c-sm font-medium md:block" set:html={item.text} />
           </GoogleIcons>
         </HeaderLink>
       ))

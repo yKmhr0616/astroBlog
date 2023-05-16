@@ -4,25 +4,25 @@ const b = {
 	}
 }
 
-const t = {
+const text = {
 	DEFAULT: "#333",
 }
 
 const textSize = {
-	"c-lg": 'clamp(1.25rem, 1.083rem + 0.83vw, 1.75rem)',
-	"c-md": 'clamp(1rem, 0.833rem + 0.83vw, 1.5rem)',
-	"c-sm": 'clamp(0.875rem, 0.75rem + 0.63vw, 1.25rem)',
-	"c-xs": 'clamp(0.75rem, 0.625rem + 0.63vw, 1.125rem)',
-	'c-2xs': 'clamp(0.625rem, 0.5rem + 0.63vw, 1rem)',
+	"c-lg": 'clamp(1.25rem, 0.917rem + 0.69vw, 1.75rem)',
+	"c-md": 'clamp(1rem, 0.667rem + 0.69vw, 1.5rem)',
+	"c-sm": 'clamp(0.875rem, 0.625rem + 0.52vw, 1.25rem)',
+	"c-xs": 'clamp(0.75rem, 0.5rem + 0.52vw, 1.125rem)',
+	'c-2xs': 'clamp(0.625rem, 0.375rem + 0.52vw, 1rem)',
 }
 
 const headLines = {
-	h1: 'clamp(4.5rem, 4.333rem + 0.83vw, 5rem)',
-	h2: 'clamp(1.5rem, 1.333rem + 0.83vw, 2rem)',
-	h3: 'clamp(1.375rem, 1.167rem + 1.04vw, 2rem)',
-	h4: 'clamp(1.25rem, 1.083rem + 0.83vw, 1.75rem)',
-	h5: 'clamp(1.125rem, 0.958rem + 0.83vw, 1.625rem)',
-	h6: 'clamp(1rem, 0.833rem + 0.83vw, 1.5rem)',
+	h1: 'clamp(3rem, 1.667rem + 2.78vw, 5rem)',
+	h2: 'clamp(1.5rem, 0.833rem + 1.39vw, 2.5rem)',
+	h3: 'clamp(1.375rem, 0.958rem + 0.87vw, 2rem)',
+	h4: 'clamp(1.25rem, 0.917rem + 0.69vw, 1.75rem)',
+	h5: 'clamp(1.125rem, 0.792rem + 0.69vw, 1.625rem)',
+	h6: 'clamp(1rem, 0.667rem + 0.69vw, 1.5rem)',
 }
 
 const screens = {
@@ -39,7 +39,7 @@ module.exports = {
 		extend: {
 			colors: {
 				b,
-				t
+				text
 			},
 			fontSize: Object.assign(textSize, headLines),
 			fontFamily: {
