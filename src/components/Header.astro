@@ -1,7 +1,30 @@
 ---
 import HeaderLink from './HeaderLink.astro'
-import GoogleIcons from '@/components/common/GoogleIcons.astro'
-import { GLOBAL_NAV } from '@/config'
+import HomeIcon from 'heroicons/24/outline/home.svg'
+import QuestionMarkCircleIcon from 'heroicons/24/outline/question-mark-circle.svg'
+import BookOpenIcon from 'heroicons/24/outline/book-open.svg'
+
+const GLOBAL_NAV = [
+  {
+    text: 'ホーム',
+    subText: 'Home',
+    href: '/',
+    icon: HomeIcon,
+  },
+  {
+    text: 'このサイトについて',
+    subText: 'About',
+    href: '/about/',
+    icon: QuestionMarkCircleIcon,
+  },
+
+  {
+    text: 'ブログ',
+    subText: 'Blog',
+    href: '/blog/',
+    icon: BookOpenIcon,
+  },
+]
 ---
 
 <header class="fixed flex w-full items-center border-t border-gray-300 px-4 py-2.5 max-md:bottom-0 md:top-0 md:py-5">
@@ -9,10 +32,11 @@ import { GLOBAL_NAV } from '@/config'
     {
       GLOBAL_NAV.map((item) => (
         <HeaderLink href={item.href}>
-          <GoogleIcons class="h-6 w-6 md:hidden">
-            <path stroke-linecap={item.path.linecap} stroke-linejoin={item.path.linejoin} d={item.path.d} />
-            <span class="hidden text-c-sm font-medium md:block" set:html={item.text} />
-          </GoogleIcons>
+          <i class="flex max-md:flex-col max-md:items-center md:hidden">
+            <img class="h-6 w-6" src={item.icon} alt={item.text} />
+            <span class="text-c-xs font-poppins font-bold md:hidden" set:html={item.subText}></span>
+          </i>
+          <span class="max-md:hidden text-c-sm font-medium" set:html={item.text} />
         </HeaderLink>
       ))
     }

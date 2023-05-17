@@ -25,7 +25,17 @@ const headLines = {
 	h6: 'clamp(1rem, 0.667rem + 0.69vw, 1.5rem)',
 }
 
+const Root = {
+	'320': '41.667%',
+	'375': '48.882%',
+	'390': '50.78125%',
+	'412': '53.6458%',
+	'640': '83.334%',
+	'768': '100%',
+}
+
 const screens = {
+	xs: '375px'
 }
 
 /** @type {import('tailwindcss').Config} */
@@ -41,12 +51,13 @@ module.exports = {
 				b,
 				text
 			},
-			fontSize: Object.assign(textSize, headLines),
+			fontSize: Object.assign(textSize, headLines, Root),
 			fontFamily: {
-				'noto-sans': 'Noto Sans JP',
-				'poppins': 'Poppins',
-				'roboto': 'Roboto'
+				'noto-sans': "'Noto Sans JP', sans-serif",
+				'poppins': "'Poppins', sans-serif",
+				'roboto': "'Roboto', sans-serif"
 			},
+			screens,
 		},
 	},
 	plugins: [],

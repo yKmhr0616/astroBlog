@@ -21,10 +21,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
     <Footer />
   </body>
 </html>
-
 <style is:global lang="scss">
+  html {
+    @apply text-320 xs:text-375 sm:text-640 md:text-768;
+  }
+
   body {
-    @apply bg-b-bg text-base text-text leading-normal;
+    @apply bg-b-bg text-base leading-normal text-text;
   }
 
   p,
@@ -57,6 +60,4 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
   h6 {
     @apply text-h6;
   }
-
-  
 </style>
