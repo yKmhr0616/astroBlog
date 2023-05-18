@@ -1,8 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import TopSection from '@/layouts/parts/top/TopSection.astro'
+
+import { Picture } from '@astrojs/image/components'
+import mv from '/public/img/top-mv.jpg'
+
+import { SITE_TITLE } from '@/config'
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-	</main>
+  <section class="relative mb-16">
+    <Picture
+      src={mv}
+      widths={[320, 768, 1024, 1920]}
+      sizes="(max-width: 800px) 100vw, 800px"
+      formats={['jpeg', 'webp']}
+      alt="Blog MV"
+      aspectRatio="16:9"
+      class="z-0 w-full object-cover max-md:h-96"
+    />
+    <h1
+      class="absolute bottom-16 left-2/4 -translate-x-2/4 font-noto-serif text-h2 tracking-widest text-white md:text-h1"
+      set:text={SITE_TITLE}
+    />
+  </section>
+  <TopSection>
+    <p class="text-c-lg">MVのデザインお待ちしております。</p>
+  </TopSection>
 </Layout>

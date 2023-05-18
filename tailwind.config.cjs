@@ -1,7 +1,11 @@
 const b = {
 	bg: {
 		DEFAULT: "#f8fafc",
-	}
+	},
+}
+
+const c = {
+	twitter : "#00acee"
 }
 
 const text = {
@@ -23,6 +27,10 @@ const headLines = {
 	h4: 'clamp(1.25rem, 0.917rem + 0.69vw, 1.75rem)',
 	h5: 'clamp(1.125rem, 0.792rem + 0.69vw, 1.625rem)',
 	h6: 'clamp(1rem, 0.667rem + 0.69vw, 1.5rem)',
+}
+
+const defaultTextSpacing = {
+	"c-sm" : `calc(${textSize["c-sm"]} * 1.5)`
 }
 
 const Root = {
@@ -49,15 +57,18 @@ module.exports = {
 		extend: {
 			colors: {
 				b,
+				c,
 				text
 			},
 			fontSize: Object.assign(textSize, headLines, Root),
 			fontFamily: {
 				'noto-sans': "'Noto Sans JP', sans-serif",
 				'poppins': "'Poppins', sans-serif",
-				'roboto': "'Roboto', sans-serif"
+				'roboto': "'Roboto', sans-serif",
+				'noto-serif':"'Noto Serif JP', serif"
 			},
 			screens,
+			spacing: Object.assign(defaultTextSpacing)
 		},
 	},
 	plugins: [],

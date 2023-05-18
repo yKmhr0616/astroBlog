@@ -1,44 +1,50 @@
 ---
 import HeaderLink from './HeaderLink.astro'
-import HomeIcon from 'heroicons/24/outline/home.svg'
-import QuestionMarkCircleIcon from 'heroicons/24/outline/question-mark-circle.svg'
-import BookOpenIcon from 'heroicons/24/outline/book-open.svg'
+
+import { Icon } from 'astro-icon'
 
 const GLOBAL_NAV = [
   {
     text: 'ホーム',
     subText: 'Home',
     href: '/',
-    icon: HomeIcon,
+    icon: 'ic:outline-home',
   },
   {
     text: 'このサイトについて',
     subText: 'About',
     href: '/about/',
-    icon: QuestionMarkCircleIcon,
+    icon: 'ic:outline-question-mark',
   },
 
   {
     text: 'ブログ',
     subText: 'Blog',
     href: '/blog/',
-    icon: BookOpenIcon,
+    icon: 'ic:outline-menu-book',
   },
 ]
 ---
 
-<header class="fixed flex w-full items-center border-t border-gray-300 px-4 py-2.5 max-md:bottom-0 md:top-0 md:py-5">
+<header
+  class="fixed z-20 flex w-full items-center justify-between border-t border-gray-300 bg-white px-8 py-2.5 max-md:bottom-0 md:top-0 md:py-5"
+>
   <nav class="flex items-center gap-x-5 max-md:flex-1 max-md:justify-evenly">
     {
       GLOBAL_NAV.map((item) => (
         <HeaderLink href={item.href}>
           <i class="flex max-md:flex-col max-md:items-center md:hidden">
-            <img class="h-6 w-6" src={item.icon} alt={item.text} />
-            <span class="text-c-xs font-poppins font-bold md:hidden" set:html={item.subText}></span>
+            <Icon class="h-6 w-6" name={item.icon} />
+            <span class="font-poppins text-c-xs font-bold md:hidden" set:html={item.subText} />
           </i>
-          <span class="max-md:hidden text-c-sm font-medium" set:html={item.text} />
+          <span class="text-c-sm font-medium max-md:hidden" set:html={item.text} />
         </HeaderLink>
       ))
     }
   </nav>
+  <div class="max-md:hidden">
+    <a href="https://twitter.com/9J_my" target="_blank">
+      <Icon class="h-6 w-6 text-c-twitter transition-opacity duration-300 hover:opacity-80" name="ph:twitter-logo" />
+    </a>
+  </div>
 </header>

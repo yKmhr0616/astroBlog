@@ -8,8 +8,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/image": "^0.16.8",
     "@astrojs/mdx": "^0.19.1",
     "@astrojs/vercel": "3.3.0",
+    "astro-icon": "^0.8.0",
     "react": "18.2.0",
     "web-vitals": "^3.3.1"
   },
