@@ -2,6 +2,6 @@
 export interface Props extends astroHTML.JSX.BaseHTMLAttributes {}
 ---
 
-<section class="container mx-auto px-5 [&:not(:first-child)]:mt-12">
+<section class="container mx-auto px-5 [&:not(:nth-child(-n+2))]:mt-12">
   <slot />
 </section>

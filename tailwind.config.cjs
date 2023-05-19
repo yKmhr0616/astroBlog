@@ -5,7 +5,7 @@ const b = {
 }
 
 const c = {
-	twitter : "#00acee"
+	twitter: "#00acee"
 }
 
 const text = {
@@ -13,25 +13,29 @@ const text = {
 }
 
 const textSize = {
-	"c-lg": 'clamp(1.25rem, 0.917rem + 0.69vw, 1.75rem)',
-	"c-md": 'clamp(1rem, 0.667rem + 0.69vw, 1.5rem)',
-	"c-sm": 'clamp(0.875rem, 0.625rem + 0.52vw, 1.25rem)',
-	"c-xs": 'clamp(0.75rem, 0.5rem + 0.52vw, 1.125rem)',
-	'c-2xs': 'clamp(0.625rem, 0.375rem + 0.52vw, 1rem)',
+	"c-lg": 'clamp(1.25rem, 0.25rem + 1.25vw, 1.75rem)',
+	"c-md": 'clamp(1rem, 1.25vw, 1.5rem)',
+	"c-sm": 'clamp(0.875rem, 0.125rem + 0.94vw, 1.25rem)',
+	"c-xs": 'clamp(0.75rem, 0.94vw, 1.125rem)',
+	'c-2xs': 'clamp(0.625rem, -0.125rem + 0.94vw, 1rem)',
 }
 
 const headLines = {
-	h1: 'clamp(3rem, 1.667rem + 2.78vw, 5rem)',
-	h2: 'clamp(1.5rem, 0.833rem + 1.39vw, 2.5rem)',
-	h3: 'clamp(1.375rem, 0.958rem + 0.87vw, 2rem)',
-	h4: 'clamp(1.25rem, 0.917rem + 0.69vw, 1.75rem)',
-	h5: 'clamp(1.125rem, 0.792rem + 0.69vw, 1.625rem)',
-	h6: 'clamp(1rem, 0.667rem + 0.69vw, 1.5rem)',
+	h1: 'clamp(3rem, 1rem + 2.5vw, 4rem)',
+	h2: 'clamp(1.5rem, -0.5rem + 2.5vw, 2.5rem)',
+	h3: 'clamp(1.375rem, 0.125rem + 1.56vw, 2rem)',
+	h4: 'clamp(1.25rem, 0.25rem + 1.25vw, 1.75rem)',
+	h5: 'clamp(1.125rem, 0.125rem + 1.25vw, 1.625rem)',
+	h6: 'clamp(1rem, 1.25vw, 1.5rem)',
 }
 
 const defaultTextSpacing = {
-	"c-sm" : `calc(${textSize["c-sm"]} * 1.5)`
+	"c-sm": `calc(${textSize["c-sm"]} * 1.5)`
 }
+
+const customSpacing = {
+	"screen-2/5": '40vw'
+};
 
 const Root = {
 	'320': '41.667%',
@@ -45,6 +49,8 @@ const Root = {
 const screens = {
 	xs: '375px'
 }
+
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -65,11 +71,23 @@ module.exports = {
 				'noto-sans': "'Noto Sans JP', sans-serif",
 				'poppins': "'Poppins', sans-serif",
 				'roboto': "'Roboto', sans-serif",
-				'noto-serif':"'Noto Serif JP', serif"
+				'noto-serif': "'Noto Serif JP', serif"
 			},
 			screens,
-			spacing: Object.assign(defaultTextSpacing)
+			spacing: Object.assign(defaultTextSpacing, customSpacing)
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(function ({ addBase, theme }) {
+			addBase({
+				'h1': { fontSize: theme('fontSize.h1') },
+				'h2': { fontSize: theme('fontSize.h2') },
+				'h3': { fontSize: theme('fontSize.h3') },
+				'h4': { fontSize: theme('fontSize.h4') },
+				'h5': { fontSize: theme('fontSize.h5') },
+				'h6': { fontSize: theme('fontSize.h6') },
+			})
+		}),
+		require('@tailwindcss/container-queries'),
+	],
 }

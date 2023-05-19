@@ -27,15 +27,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 
 <style is:global lang="scss">
   html {
-    // @apply text-320 xs:text-375 sm:text-640 md:text-768;
-  }
+      @apply text-640 md:text-768;
+    }
 
   body {
     @apply bg-b-bg text-base leading-normal text-text;
   }
 
   main {
-    @apply md:mt-c-sm md:pt-10;
+    @apply mb-c-sm pb-16 md:mt-c-sm md:pt-10;
   }
 
   p,
@@ -43,29 +43,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
   a,
   li {
     @apply text-c-md;
-  }
-
-  h1 {
-    @apply text-h1;
-  }
-
-  h2 {
-    @apply text-h2;
-  }
-
-  h3 {
-    @apply text-h3;
-  }
-
-  h4 {
-    @apply text-h4;
-  }
-
-  h5 {
-    @apply text-h5;
-  }
-
-  h6 {
-    @apply text-h6;
   }
 </style>

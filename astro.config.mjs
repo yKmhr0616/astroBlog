@@ -6,11 +6,13 @@ import vue from "@astrojs/vue";
 import vercel from '@astrojs/vercel/edge';
 import image from "@astrojs/image";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-blog-pearl.vercel.app/",
-  integrations: [mdx(), sitemap(), tailwind(), vue(), image()],
-  tailwindConfig: "./tailwindConfig.js",
-  output: 'server',
-  adapter: vercel()
+  site: "https://yu-astro-blog.pages.dev/",
+  integrations: [mdx(), sitemap(), tailwind(), vue(), image(), react()],
+  tailwindConfig: "./tailwindConfig.js"
+  // output: 'server',
+  // adapter: vercel()
 });
