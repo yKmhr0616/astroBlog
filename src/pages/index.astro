@@ -11,58 +11,98 @@ import mv from '/public/img/top-mv.jpg'
 import { SITE_TITLE } from '@/config'
 ---
 
-<Layout title="Welcome to Astro.">
-  <section class="relative mb-16">
-    <Picture
-      src={mv}
-      widths={[320, 768, 1024, 1920]}
-      sizes="(max-width: 800px) 100vw, 800px"
-      formats={['jpeg', 'webp']}
-      alt="Blog MV"
-      aspectRatio="16:9"
-      class="z-0 w-full object-cover object-bottom max-md:h-96 md:max-h-screen-2/5"
-    />
-    <h1
-      class="absolute bottom-16 left-2/4 -translate-x-2/4 font-noto-serif text-h2 tracking-widest text-white md:text-h1"
-      set:text={SITE_TITLE}
-    />
-  </section>
-  <TopSection>
-    <p class="text-center text-c-lg text-gray-300 line-through decoration-gray-100">MVのデザインお待ちしております。</p>
-  </TopSection>
-  <TopSection>
-    <h1 class="text-center font-noto-serif">WORK</h1>
-    <article class="mt-6 flex flex-col gap-y-8 max-w-7xl mx-auto">
-      <TopSectionSkill title="フロントエンドコーディング" subTitle="FRONT ENGINEER">
-        <Icon class="h-32 w-32 flex-shrink-0" name="mdi:alphabet-c-box-outline" slot="name" />
-        <Fragment slot="text">
-          <p>
-            デザインデータを元に動きや効果を適切にコーディングします。
-            フレームワークの選定や、静的資材の最適化によるレスポンシブデザインでも
-            簡単かつ軽量なサイト制作の検証もおこなっています。
-          </p>
-          <p>また、Javascriptを利用した動的コンポーネントのサイト制作も可能です。</p>
-        </Fragment>
-      </TopSectionSkill>
-      <TopSectionSkill title="所持スキル" subTitle="SKILLS">
-        <Icon class="h-32 w-32 flex-shrink-0" name="mdi:alphabet-s-box-outline" slot="name" />
-        <Fragment slot="text">
-          <dl class="grid grid-flow-row grid-cols-2 gap-y-4">
-            <dt class="flex items-center text-c-lg font-medium">基礎</dt>
-            <dd class="flex flex-col pl-4">
-              <span>HTML</span>
-              <span>CSS(SCSS)</span>
-              <span>Javascript(Vanilla JS)</span>
-            </dd>
-            <dt class="flex items-center text-c-lg font-medium">フレームワーク</dt>
-            <dd class="flex flex-col pl-4">
-              <span>Astro</span>
-              <span>Vue(Vue3 Composition API)</span>
-              <span>React</span>
-            </dd>
-          </dl>
-        </Fragment>
-      </TopSectionSkill>
-    </article>
-  </TopSection>
+<Layout>
+  <article class="grid gap-y-16">
+    <section class="relative">
+      <Picture
+        src={mv}
+        widths={[320, 768, 1024, 1920]}
+        width={1423}
+        height={576}
+        sizes="(max-width: 800px) 100vw, 800px"
+        formats={['webp']}
+        alt="Blog MV"
+        aspectRatio="16:9"
+        loading="eager"
+        decoding="auto"
+        class="z-0 w-full object-cover object-bottom max-md:h-96 md:max-h-screen-2/5"
+      />
+      <h1
+        class="absolute bottom-16 left-2/4 -translate-x-2/4 font-noto-serif text-h2 tracking-widest text-white md:text-h1"
+        set:text={SITE_TITLE}
+      />
+    </section>
+    <TopSection>
+      <p class="text-center text-c-lg text-gray-300 line-through decoration-gray-100">
+        MVのデザインお待ちしております。
+      </p>
+    </TopSection>
+
+    <TopSection>
+      <h1 class="text-center font-noto-serif">ABOUT</h1>
+      <article class="mx-auto mt-6 grid max-w-4xl gap-y-4">
+        <p>Web開発にまつわる情報を備忘録を兼ねていろいろ 書き連ねるブログ＆ポートフォリオサイトになります。</p>
+        <p>
+          主にフロントエンドで完結できるアプリ制作・勉強ログとかそういうのを
+          <a href="https://astro.build/" class="inline-flex gap-x-1 text-c-link underline underline-offset-4">
+            Astro
+            <Icon name="line-md:external-link" class="inline w-c-md" />
+          </a>で制作していきます。
+        </p>
+        <p>
+          詳細については
+          <a target="_blank" href="/about/" class="inline-flex gap-x-1 text-c-link underline underline-offset-4">
+            こちら
+          </a>
+        </p>
+      </article>
+    </TopSection>
+
+    <TopSection>
+      <h1 class="text-center font-noto-serif">WORK</h1>
+      <article class="mx-auto mt-6 grid max-w-7xl gap-x-4 gap-y-8 md:grid-cols-2">
+        <TopSectionSkill title="フロントエンドコーディング" subTitle="FRONT ENGINEER">
+          <Icon class="h-32 w-32 flex-shrink-0" name="mdi:alphabet-c-box-outline" slot="name" />
+          <Fragment slot="text">
+            <p class="tracking-wider">
+              デザインデータを元に動きや効果を適切にコーディングします。
+              フレームワークの選定や、静的資材の最適化によるレスポンシブデザインでも
+              簡単かつ軽量なサイト制作の検証もおこなっています。
+            </p>
+            <p>また、Javascriptを利用した動的コンポーネントのサイト制作も可能です。</p>
+          </Fragment>
+        </TopSectionSkill>
+        <TopSectionSkill title="所持スキル" subTitle="SKILLS">
+          <Icon class="h-32 w-32 flex-shrink-0" name="mdi:alphabet-s-box-outline" slot="name" />
+          <Fragment slot="text">
+            <dl class="grid grid-flow-row grid-cols-auto-2 gap-4">
+              <dt class="self-center text-c-lg font-medium">基礎</dt>
+              <dd class="flex flex-col tracking-wider">
+                <span>HTML</span>
+                <span>CSS(SCSS)</span>
+                <span>Javascript(Vanilla JS)</span>
+              </dd>
+              <dt class="self-center text-c-lg font-medium">フレームワーク</dt>
+              <dd class="flex flex-col tracking-wider">
+                <span>Astro</span>
+                <span>Vue(Vue3 Composition API)</span>
+                <span>React</span>
+              </dd>
+            </dl>
+          </Fragment>
+        </TopSectionSkill>
+      </article>
+    </TopSection>
+
+    <TopSection>
+      <h1 class="text-center font-noto-serif">PRODUCTS</h1>
+      <p class="mx-auto mt-6 max-w-4xl">制作したサイト・しょうもないアプリを随時展開します。</p>
+    </TopSection>
+
+    <TopSection>
+      <h1 class="text-center font-noto-serif">BLOG</h1>
+      <p class="mx-auto mt-6 max-w-4xl">雑談・技術系のブログになります。</p>
+      <p class="mx-auto mt-6 max-w-4xl">なお、準備中</p>
+    </TopSection>
+  </article>
 </Layout>

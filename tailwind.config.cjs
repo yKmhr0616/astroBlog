@@ -5,7 +5,8 @@ const b = {
 }
 
 const c = {
-	twitter: "#00acee"
+	twitter: "#00acee",
+	link:"#06b6d4"
 }
 
 const text = {
@@ -30,8 +31,15 @@ const headLines = {
 }
 
 const defaultTextSpacing = {
-	"c-sm": `calc(${textSize["c-sm"]} * 1.5)`
+	"cl-sm": `calc(${textSize["c-sm"]} * 1.5)`
 }
+
+const inlineTextRatio = {
+	"em-xl" : "1.5em",
+	"em-lg" : "1.2em",
+	"em-sm" : "0.8em",
+	"em-xs" : "0.65em",
+};
 
 const customSpacing = {
 	"screen-2/5": '40vw'
@@ -50,6 +58,10 @@ const screens = {
 	xs: '375px'
 }
 
+const gridTemplateColumns = {
+	"auto-2":"auto 1fr",
+}
+
 const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
@@ -66,7 +78,7 @@ module.exports = {
 				c,
 				text
 			},
-			fontSize: Object.assign(textSize, headLines, Root),
+			fontSize: Object.assign(textSize, headLines, Root, inlineTextRatio),
 			fontFamily: {
 				'noto-sans': "'Noto Sans JP', sans-serif",
 				'poppins': "'Poppins', sans-serif",
@@ -74,7 +86,8 @@ module.exports = {
 				'noto-serif': "'Noto Serif JP', serif"
 			},
 			screens,
-			spacing: Object.assign(defaultTextSpacing, customSpacing)
+			spacing: Object.assign(defaultTextSpacing, customSpacing, textSize),
+			gridTemplateColumns
 		},
 	},
 	plugins: [
