@@ -1,0 +1,10 @@
+---
+import ContentLayout from '@/layouts/ContentLayout.astro'
+import { getCollection } from 'astro:content'
+const posts = await getCollection('blog')
+const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())]
+---
+
+<ContentLayout>
+  {uniqueTags.map((tag) => <Fragment set:text={tag} />)}
+</ContentLayout>
