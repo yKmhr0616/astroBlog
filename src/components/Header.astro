@@ -27,24 +27,23 @@ const GLOBAL_NAV = [
 ---
 
 <header
-  class="fixed z-20 flex w-full items-center justify-between border-t border-gray-300 bg-white px-8 py-2.5 max-md:bottom-0 md:top-0 md:py-5"
+  class="fixed inset-x-0 bottom-0 z-20 flex items-center justify-between mx-auto border-t border-gray-300 px-8 py-2.5 max-w-w-screen-md bg-white"
 >
-  <nav class="flex items-center gap-x-5 max-md:flex-1 max-md:justify-evenly">
+  <nav class="flex items-center gap-x-5 flex-1 justify-evenly">
     {
       GLOBAL_NAV.map((item) => (
         <HeaderLink href={item.href}>
-          <i class="flex max-md:flex-col max-md:items-center md:hidden">
+          <i class="flex flex-col items-center">
             <Icon class="h-6 w-6" name={item.icon} />
-            <span class="font-poppins text-c-xs font-bold md:hidden" set:html={item.subText} />
+            <span class="font-poppins text-c-xs font-bold" set:html={item.subText} />
           </i>
-          <span class="text-c-sm font-medium max-md:hidden" set:html={item.text} />
         </HeaderLink>
       ))
     }
   </nav>
-  <div class="max-md:hidden">
+  <div class="hidden">
     <a href="https://twitter.com/9J_my" target="_blank" aria-label="Open to developer twitter">
-      <Icon class="h-6 w-6 text-c-twitter transition-opacity duration-300 hover:opacity-80" name="ph:twitter-logo" />
+      <Icon class="h-8 text-c-twitter transition-opacity duration-300 hover:opacity-80" name="mdi:twitter" />
     </a>
   </div>
 </header>

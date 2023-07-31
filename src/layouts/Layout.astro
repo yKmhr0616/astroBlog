@@ -17,25 +17,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
     <BaseHead title={title ?? SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="max-w-w-screen-md mx-auto min-h-screen bg-white">
+      <Header />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
 
 <style is:global lang="scss">
   html {
-      @apply text-640 md:text-768;
-    }
+  }
 
   body {
-    @apply bg-b-bg text-base leading-normal text-text;
+    @apply text-base leading-normal text-text;
+    @apply bg-b-bg;
   }
 
   main {
-    @apply mb-cl-sm pb-16 md:mt-cl-sm md:pt-10;
+    @apply pb-16;
   }
 
   p,
