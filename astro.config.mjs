@@ -12,7 +12,10 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://yu-astro-blog.pages.dev/",
   integrations: [mdx(), sitemap(), tailwind(), vue(), image(), react()],
-  tailwindConfig: "./tailwindConfig.js"
+  tailwindConfig: "./tailwindConfig.js",
+  build: {
+    inlineStylesheets:"auto"
+  }
   // output: 'server',
   // adapter: vercel()
 });

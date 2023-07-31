@@ -1,5 +1,6 @@
 ---
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+import { HTMLTag,Polymorphic } from 'astro/types';
 const { href, class: className, ...props } = Astro.props
 ---
 
