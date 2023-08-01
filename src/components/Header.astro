@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro'
+import { Header as ReactHeader } from '@/layouts/parts/common/header'
 
 import { Icon } from 'astro-icon'
 
@@ -26,24 +27,4 @@ const GLOBAL_NAV = [
 ]
 ---
 
-<header
-  class="fixed inset-x-0 bottom-0 z-20 flex items-center justify-between mx-auto border-t border-gray-300 px-8 py-2.5 max-w-w-screen-md bg-white"
->
-  <nav class="flex items-center gap-x-5 flex-1 justify-evenly">
-    {
-      GLOBAL_NAV.map((item) => (
-        <HeaderLink href={item.href}>
-          <i class="flex flex-col items-center">
-            <Icon class="h-6 w-6" name={item.icon} />
-            <span class="font-poppins text-c-xs font-bold" set:html={item.subText} />
-          </i>
-        </HeaderLink>
-      ))
-    }
-  </nav>
-  <div class="hidden">
-    <a href="https://twitter.com/9J_my" target="_blank" aria-label="Open to developer twitter">
-      <Icon class="h-8 text-c-twitter transition-opacity duration-300 hover:opacity-80" name="mdi:twitter" />
-    </a>
-  </div>
-</header>
+<ReactHeader client:load />
