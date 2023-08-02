@@ -9,5 +9,7 @@ const { title, description } = Astro.props as Props
 ---
 
 <Layout title={title} description={description}>
-  <slot />
+  <article class="mt-20">
+    <slot />
+  </article>
 </Layout>

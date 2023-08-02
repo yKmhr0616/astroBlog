@@ -6,6 +6,7 @@ const blogCollection = defineCollection({
         title: z.string(),
         tags: z.array(z.string()),
         pubDate: z.date(),
+        description: z.string(),
     }),
 })
 // 3. Export a single `collections` object to register your collection(s)

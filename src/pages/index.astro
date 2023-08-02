@@ -3,21 +3,21 @@ export const prerender = true
 import Layout from '../layouts/Layout.astro'
 import { Icon } from 'astro-icon'
 
-
 import { SITE_TITLE } from '@/config'
 ---
 
 <Layout>
   <article class="grid gap-y-16">
-    <section class="relative min-h-168 grid place-content-center bg-gradient-to-b from-cyan-300/95 to-transparent">
-      <i>
-        <Icon class="w-full px-4 text-neutral-100" name={"mdi:infinity"}></Icon>
+    <div class="relative min-h-screen">
+      <section class="relative grid place-content-center min-h-168 lg:h-full bg-gradient-to-b from-cyan-300/95 to-transparent">
+        <i>
+          <Icon class="w-full px-4 text-neutral-100" name={'ph:infinity-bold'} />
+        </i>
+        <p class="text-center text-c-lg text-text font-bold">リニューアル中</p>
+      </section>
+      <i class="absolute bottom-6 right-6 animate-bounce">
+        <Icon class="h-12 text-gray-800/80" name={'bi:arrow-down'} />
       </i>
-    </section>
-    <section>
-      <p class="text-center text-c-lg text-gray-300 line-through decoration-gray-100">
-        MVのデザインお待ちしております。
-      </p>
-    </section>
+    </div>
   </article>
 </Layout>

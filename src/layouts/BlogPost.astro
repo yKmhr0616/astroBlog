@@ -1,49 +1,48 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 
 export interface Props {
-	content: {
-		title: string;
-		description: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+  content: {
+    title: string
+    description: string
+    pubDate?: string
+    updatedDate?: string
+    heroImage?: string
+  }
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
-} = Astro.props;
+  content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-	<body>
-		<div class="l-contents --col-2">
-			<Header title={title} />
-			<main>
-				<article>
-					{heroImage && (
-						<img
-							width={720}
-							height={360}
-							src={heroImage}
-							alt=""
-						/>
-					)}
-					<h1 class="title">{title}</h1>
-					{pubDate && <time>{pubDate}</time>}
-					{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
-					<hr/>
-					<slot />
-				</article>
-			</main>
-		</div>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <div>
+      <Header title={title} />
+      <main>
+        <article class="mt-20">
+          {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+          <h1>{title}</h1>
+          {pubDate && <time>{pubDate}</time>}
+          {
+            updatedDate && (
+              <div>
+                Last updated on <time>{updatedDate}</time>
+              </div>
+            )
+          }
+          <hr />
+          <slot />
+        </article>
+      </main>
+    </div>
+    <Footer />
+  </body>
 </html>

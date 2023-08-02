@@ -67,6 +67,14 @@ const gridTemplateColumns = {
 	"auto-2": "auto 1fr",
 }
 
+const zIndex = {
+	100:100,
+	101:101,
+	102:102,
+	103:103,
+	200:200,
+}
+
 const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
@@ -94,7 +102,8 @@ module.exports = {
 			spacing: Object.assign(spacing, defaultTextSpacing, customSpacing, textSize),
 			maxWidth: Object.assign({}, spacing),
 			minHeight: Object.assign({}, spacing),
-			gridTemplateColumns
+			gridTemplateColumns,
+			zIndex,
 		},
 	},
 	plugins: [
