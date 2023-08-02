@@ -12,9 +12,9 @@ export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="fixed top-0 inset-x-0 z-100 flex items-center h-20 bg-white/50 backdrop-blur">
+        <header className="fixed top-0 inset-x-0 z-100 flex items-center w-full h-20 bg-white/50 backdrop-blur">
             <nav
-                className="w-full flex max-w-7xl items-center justify-between px-6"
+                className="w-full flex items-center justify-between px-6"
                 aria-label="Global"
             >
                 <div className="flex flex-1">
